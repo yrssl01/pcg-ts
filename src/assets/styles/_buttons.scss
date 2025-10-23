@@ -1,0 +1,62 @@
+$btn-color: var(--#{prefix}body-color);
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $input-btn-padding-x;
+$btn-font-family: $input-btn-font-family;
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
+  padding: 8px 16px;
+  font-size: 16px;
+  transition: 0.25s all;
+  color: var(--color-black);
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid transparent !important;
+    color: var(--color-black) !important;
+    background-color: transparent;
+  }
+
+  &-black {
+    background-color: var(--color-black) !important;
+    color: var(--color-white) !important;
+    &-outline {
+      border: 1px solid var(--color-black) !important;
+      &:focus,
+      &:active,
+      &:hover {
+        color: var(--color-white) !important;
+      }
+    }
+  }
+
+  @each $color-name, $color-value in $colors {
+    &-#{'' + $color-name} {
+      background-color: var(--color-#{$color-name}) !important;
+      &:focus,
+      &:active,
+      &:hover {
+        border: 1px solid transparent !important;
+        background-color: var(--color-#{$color-name}-80) !important;
+      }
+    }
+    &-color-#{'' + $color-name} {
+      color: var(--color-#{$color-name}) !important;
+      &:focus,
+      &:active,
+      &:hover {
+        border: 1px solid transparent !important;
+        color: var(--color-#{$color-name}) !important;
+      }
+    }
+  }
+}

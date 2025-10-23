@@ -1,0 +1,14 @@
+@mixin isMobile {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin font-face($family, $filename, $weight) {
+  @font-face {
+    font-family: $family;
+    src: url('../fonts/#{$filename}.ttf') format('truetype');
+    font-style: normal;
+    font-weight: $weight;
+  }
+}

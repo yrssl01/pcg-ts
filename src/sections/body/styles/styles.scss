@@ -1,0 +1,128 @@
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &-col {
+      display: flex;
+      flex-direction: column;
+      padding: 32px;
+
+      @media (min-width: 1200px) {
+        padding-left: 64px;
+        padding-right: 64px;
+      }
+
+      @media (min-width: 992px) {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+
+    @media (min-width: 576px) {
+      padding: 0 10vw;
+    }
+
+    @media (min-width: 992px) {
+      flex-grow: 1;
+    }
+  }
+
+  &__header {
+    // margin-top: auto;
+
+    &-title {
+      display: block;
+      position: relative;
+      line-height: 1.2;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding-bottom: 1rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        height: 8px;
+        width: 128px;
+        background-color: var(--color-primary);
+      }
+
+      strong {
+        font-weight: 700;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 3.12rem;
+      }
+    }
+
+    &-subtitle {
+      display: block;
+      font-size: 1rem;
+      margin-top: 1rem;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    strong {
+      display: block;
+    }
+  }
+
+  &__content {
+    margin-top: auto;
+
+    h1 {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin-bottom: 1.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 1.6rem;
+      margin-top: 0;
+    }
+  }
+
+  &__buttons {
+    margin-top: auto;
+
+    .button {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      color: var(--color-black);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 2px var(--color-black) solid;
+      background-color: transparent;
+      line-height: 1.4;
+      width: 100%;
+
+      @media (min-width: 1400px) {
+        padding: 1.2vw 3vw;
+      }
+    }
+  }
+}
+
+.button-more {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 400;
+  margin-top: 1.5rem;
+}

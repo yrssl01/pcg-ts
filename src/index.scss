@@ -1,0 +1,232 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'assets/styles/mixins';
+@import 'assets/styles/colors';
+@import 'assets/styles/buttons';
+@import 'assets/styles/fonts';
+
+@media (min-width: 992px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    background-color: var(--color-gray-200);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--color-gray-200);
+  }
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  line-height: 1.6;
+  width: 100vw !important;
+  font-family: 'Montserrat', 'Inter', 'Oxygen', 'Cantarell', 'Helvetica Neue',
+    sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  touch-action: pan-x pan-y;
+  height: 100%;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    color: color-opacity(var(--color-black), 0.7);
+  }
+}
+
+hr {
+  opacity: 1;
+}
+
+.overflow {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  &.two {
+    -webkit-line-clamp: 2;
+  }
+  &.seven {
+    -webkit-line-clamp: 7;
+  }
+}
+
+.divider {
+  background-color: var(--color-divider);
+  width: calc(100% + 32px);
+  height: 8px;
+  margin-top: 8px;
+  margin-left: -16px;
+  border: none;
+  //   &.mobile {
+  //     display: none;
+  //     @include isMobile {
+  //       display: block;
+  //     }
+  //   }
+}
+
+.w-max-content {
+  width: max-content;
+}
+
+.section__back {
+  color: var(--color-white);
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  video {
+    // object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+.fullwidth {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+[data-scroll='title'] {
+  position: relative;
+}
+
+[data-scroll='title'].scrolled > * {
+  -webkit-animation: opacity-title 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation: opacity-title 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+[data-scroll='title'].scrolled::before {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  height: 100%;
+  background-color: var(--color-primary);
+  animation-delay: 0.5s;
+
+  @media (min-width: 1200px) {
+    animation: scroll-title-laptop 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+}
+
+.margin {
+  margin: auto;
+
+  &-top {
+    margin-top: auto;
+  }
+
+  &-bottom {
+    margin-bottom: auto;
+  }
+
+  &-left {
+    margin-left: auto;
+  }
+
+  &-right {
+    margin-right: auto;
+  }
+}
+
+@keyframes opacity-title {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scroll-title-laptop {
+  0% {
+    left: -64px;
+    width: 0;
+  }
+
+  50% {
+    left: -64px;
+    width: calc(100% + 64px + 64px);
+  }
+
+  100% {
+    left: calc(100% + 64px);
+    width: 0;
+  }
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/src/assets/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  src: url(/src/assets/fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  src: url(/src/assets/fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/src/assets/fonts/Montserrat-Bold.ttf);
+}

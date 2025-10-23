@@ -1,0 +1,16 @@
+.separ {
+  width: 100%;
+  -ms-flex-preferred-size: 6.8vw;
+  flex-basis: 6.8vw;
+  height: 6.8vw;
+
+  &--small {
+    -ms-flex-preferred-size: 3.4vw;
+    flex-basis: 3.4vw;
+    height: 3.4vw;
+  }
+
+  &--border {
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+}
