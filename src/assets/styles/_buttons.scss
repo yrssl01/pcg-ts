@@ -4,26 +4,31 @@ $btn-padding-x: $input-btn-padding-x;
 $btn-font-family: $input-btn-font-family;
 
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  align-content: center;
-  padding: 8px 16px;
-  font-size: 16px;
-  transition: 0.25s all;
+  position: relative;
+  display: inline-block;
+  text-align: center;
   color: var(--color-black);
-  border: 1px solid transparent;
-  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 2px var(--color-black) solid;
+  background-color: transparent;
+  line-height: 1.4;
+  padding: 12px 32px;
+  border-radius: 0 !important;
+
+  @media (min-width: 1400px) {
+    padding: 1.2vw 3vw;
+  }
 
   &:focus,
   &:active,
   &:hover {
     outline: none;
     box-shadow: none;
-    border: 1px solid transparent !important;
-    color: var(--color-black) !important;
-    background-color: transparent;
+    border: 2px var(--color-white) solid !important;
+    color: var(--color-white) !important;
   }
 
   &-black {

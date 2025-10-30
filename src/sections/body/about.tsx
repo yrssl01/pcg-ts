@@ -7,7 +7,7 @@ export function About() {
         <Separator />
         <div className="section__body">
           <div className="section__body-col">
-            <div className="section__header scrolled" data-scroll="title">
+            <div className="section__header" data-scroll="title">
               <div className="section__header-title">
                 Project <strong>Construction</strong> Group
               </div>
@@ -40,7 +40,7 @@ export function About() {
             </div>
           </div>
         </div>
-        <Separator border />
+        <Separator border="bottom" />
       </section>
     </>
   )

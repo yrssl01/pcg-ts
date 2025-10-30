@@ -1,0 +1,32 @@
+.grid-line {
+  display: none;
+
+  @media (min-width: 576px) {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    min-height: 100%;
+    margin: 0;
+    color: var(--color-gray-200);
+    background-color: var(--color-gray-200);
+    width: 1px;
+    height: 100%;
+    border: none;
+
+    &--center {
+      left: 50%;
+
+      @media (min-width: 576px) and (max-width: 991px) {
+        display: none;
+      }
+    }
+
+    &--left {
+      left: 10vw;
+    }
+
+    &--right {
+      right: 10vw;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+
+  a {
+    color: var(--color-gray-300);
+  }
+
+  .icon {
+    display: inline-block;
+    width: 1.06rem;
+    height: 1.06rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    position: relative;
+    top: 0.2rem;
+    margin-right: 0.24rem;
+
+    &_whatsapp {
+      background-image: url(./assets/icons/whatsapp-icon.svg);
+    }
+  }
+
+  &__title {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+
+  &__subtitle {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+
+    &-col {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 42px 16px 0;
+
+      @media (min-width: 1200px) {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+
+    &-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    &-content {
+      color: var(--color-gray-300);
+      font-size: 0.9rem;
+      line-height: 1.6;
+
+      & + & {
+        margin-top: 16px;
+      }
+    }
+  }
+}

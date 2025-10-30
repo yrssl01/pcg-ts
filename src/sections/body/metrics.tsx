@@ -1,3 +1,4 @@
+import { Logo } from '../../components/logo'
 import { Separator } from '../../components/separ'
 import './styles/metrics.scss'
 
@@ -8,10 +9,22 @@ export function Metrics() {
         <Separator />
         <div className="section__body">
           <div className="section__body-col">
-            <div className="section__header scrolled" data-scroll="title">
+            <div className="section__header" data-scroll="title">
               <div className="section__header-title">
                 <strong>Инновации и интеграции в строительстве</strong>
               </div>
+            </div>
+            <div
+              className="align-center"
+              style={{
+                display: 'flex',
+                height: '256px',
+                justifyContent: 'center',
+                justifyItems: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Logo className="align-center" />
             </div>
             <ul className="metrics__list">
               <li className="metrics__list-point">
@@ -43,6 +56,8 @@ export function Metrics() {
               <h1>От концепции до строительства </h1>
               <p>
                 Каждый наш проект — это путь от идеи до реализованного объекта.
+              </p>
+              <p>
                 Мы объединяем все ключевые этапы в едином процессе, обеспечивая
                 целостность, эффективность и контроль качества на каждом шаге.
               </p>
@@ -51,15 +66,15 @@ export function Metrics() {
                 проекты, отличающиеся качеством, функциональностью и точностью
                 исполнения.
               </p>
-              <div className="section__buttons">
-                <a href="" className="button">
-                  Начнем проект вместе!
-                </a>
-              </div>
+            </div>
+            <div className="section__buttons">
+              <a href="" className="button">
+                Начнем проект вместе!
+              </a>
             </div>
           </div>
         </div>
-        <Separator border />
+        <Separator border="bottom" />
       </section>
     </>
   )

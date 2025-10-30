@@ -3,12 +3,18 @@
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+
   &__body {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 
     &-col {
+      flex-basis: 100%;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
       padding: 32px;
@@ -53,6 +59,12 @@
         height: 8px;
         width: 128px;
         background-color: var(--color-primary);
+
+        @media (max-width: 767px) {
+          z-index: -1;
+          left: 50%;
+          margin-left: -64px;
+        }
       }
 
       strong {
@@ -78,7 +90,7 @@
   }
 
   &__content {
-    margin-top: auto;
+    // margin-top: auto;
 
     h1 {
       font-size: 1.2rem;
@@ -96,6 +108,7 @@
 
   &__buttons {
     margin-top: auto;
+    padding-top: 4rem;
 
     .button {
       position: relative;
@@ -109,6 +122,7 @@
       border: 2px var(--color-black) solid;
       background-color: transparent;
       line-height: 1.4;
+      padding: 12px 32px;
       width: 100%;
 
       @media (min-width: 1400px) {
@@ -125,4 +139,8 @@
   color: var(--color-primary);
   font-weight: 400;
   margin-top: 1.5rem;
+}
+
+.align-center {
+  align-self: center;
 }

@@ -19,14 +19,14 @@ export function HeaderSection() {
             type="video/mp4"
           />
         </video>
-        <div className="header__header"></div>
-        <Separator size="small" />
-        <div className="header__body">
+        <div className="header__header">
+          <Logo className="header__header-logo" />
+        </div>
+        <Separator size="small" border="top" />
+        <div className="section__body header__body">
           <div className="header__body-col fullwidth">
-            <div
-              className="section__header scrolled margin-top"
-              data-scroll="title"
-            >
+            <Logo className="header__logo" />
+            <div className="section__header margin-top" data-scroll="title">
               <div className="section__header-title">
                 Архитектура <strong>со смыслом</strong>
               </div>
@@ -36,7 +36,7 @@ export function HeaderSection() {
             </div>
           </div>
         </div>
-        <Separator size="small" />
+        <Separator size="small" border="bottom" />
         <div className="header__footer"></div>
       </section>
     </>
