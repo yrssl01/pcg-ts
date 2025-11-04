@@ -23,15 +23,24 @@
   }
 }
 
+html {
+  font-size: 15px;
+
+  @media (min-width: 1400px) {
+    font-size: 1vw;
+  }
+}
+
 body {
   overflow-x: hidden;
   margin: 0;
   line-height: 1.6;
-  width: 100vw !important;
   font-family: 'Montserrat', 'Inter', 'Oxygen', 'Cantarell', 'Helvetica Neue',
     sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
 }
 
 :root {
@@ -171,6 +180,10 @@ hr {
   &-right {
     margin-right: auto;
   }
+}
+
+.relative {
+  position: relative;
 }
 
 @keyframes opacity-title {

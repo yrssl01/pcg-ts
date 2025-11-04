@@ -2,7 +2,7 @@ import './styles.scss'
 
 type Size = 'big' | 'small'
 
-type Border = 'top' | 'bottom' | ''
+type Border = 'top' | 'bottom' | 'both' | ''
 
 interface SeparatorProps {
   size?: Size
@@ -15,7 +15,7 @@ export function Separator({ size = 'big', border = '' }: SeparatorProps) {
       <div
         className={`separ ${size === 'small' ? 'separ--small' : ''} ${
           border ? `separ--border-${border}` : ''
-        }`}
+        } `}
       />
     </>
   )

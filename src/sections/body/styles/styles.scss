@@ -1,7 +1,17 @@
 .section {
   position: relative;
   display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+
+  &--dark {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
 
   @media (max-width: 767px) {
     text-align: center;
@@ -72,7 +82,7 @@
       }
 
       @media (min-width: 1200px) {
-        font-size: 3.12rem;
+        font-size: 2.6rem;
       }
     }
 
@@ -130,6 +140,19 @@
       line-height: 1.4;
       padding: 12px 32px;
       width: 100%;
+      transition: all 0.25s;
+
+      &--white {
+        color: var(--color-white);
+        border-color: var(--color-white);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
 
       @media (min-width: 1400px) {
         padding: 1.2vw 3vw;

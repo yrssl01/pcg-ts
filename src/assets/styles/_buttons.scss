@@ -17,6 +17,7 @@ $btn-font-family: $input-btn-font-family;
   line-height: 1.4;
   padding: 12px 32px;
   border-radius: 0 !important;
+  transition: all 0.25s;
 
   @media (min-width: 1400px) {
     padding: 1.2vw 3vw;
