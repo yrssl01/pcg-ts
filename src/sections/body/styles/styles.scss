@@ -29,6 +29,11 @@
       flex-direction: column;
       padding: 32px;
 
+      .separ--small {
+        flex-basis: 1.7vw;
+        height: 1.7vw;
+      }
+
       @media (min-width: 1200px) {
         padding-left: 64px;
         padding-right: 64px;
@@ -79,6 +84,10 @@
 
       strong {
         font-weight: 700;
+      }
+
+      @media (min-width: 576px) and (max-width: 767px) {
+        font-size: 2rem;
       }
 
       @media (min-width: 1200px) {
@@ -172,4 +181,10 @@
 
 .align-center {
   align-self: center;
+}
+
+.col-sm-p-0 {
+  @media (max-width: 767px) {
+    padding: 0 0 32px 0;
+  }
 }

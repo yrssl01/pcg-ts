@@ -1,5 +1,6 @@
 import { Logo } from '../../components/logo'
 import './styles.scss'
+import bgVideo from '../../assets/video/background-video.mp4'
 import { Separator } from '../../components/separ'
 
 export function HeaderSection() {
@@ -14,10 +15,7 @@ export function HeaderSection() {
           playsInline
           className="section__back section__back--video"
         >
-          <source
-            src="https://cdn.pixabay.com/video/2025/09/15/304330_large.mp4"
-            type="video/mp4"
-          />
+          <source src={bgVideo} type="video/mp4" />
         </video>
         <div className="header__header">
           <Logo className="header__header-logo" />
