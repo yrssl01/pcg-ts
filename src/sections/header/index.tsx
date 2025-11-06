@@ -8,7 +8,6 @@ export function HeaderSection() {
     <>
       <section className="header section section__back">
         <video
-          src=""
           autoPlay
           muted
           loop

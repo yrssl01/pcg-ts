@@ -37,7 +37,7 @@ export function Metrics() {
                 <div className="metrics__item">
                   <div className="metrics__item-title">400</div>
                   <div className="metrics__item-desc">
-                    обхектов прошли <br /> через нас
+                    объектов прошли <br /> через нас
                   </div>
                 </div>
               </li>

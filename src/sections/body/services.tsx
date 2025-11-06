@@ -10,6 +10,7 @@ import service6 from '../../assets/images/service-icons/construction-site.png'
 import service7 from '../../assets/images/service-icons/expert.png'
 import service8 from '../../assets/images/service-icons/delivery.png'
 import service9 from '../../assets/images/service-icons/maintenance.png'
+import referenceList from '../../assets/documents/reference-list.pdf'
 
 import { Separator } from '../../components/separ'
 
@@ -31,6 +32,11 @@ export function Services() {
                 Что мы <strong>предоставляем</strong>
               </div>
               <div className="section__header-subtitle">Наши услуги</div>
+            </div>
+            <div className="section__buttons">
+              <a href={referenceList} className="button">
+                Референс-лист
+              </a>
             </div>
           </div>
           <div className="section__body-col">
@@ -99,7 +105,7 @@ export function Services() {
                           <img src={service6} alt="" loading="lazy" />
                         </div>
                         <h5 className="services__block-title">
-                          Стротительно-монтажные работы (СМР)
+                          Строительно-монтажные работы (СМР)
                         </h5>
                       </a>
                     </li>
