@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="84.6666mm" height="66.4632mm" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+viewBox="0 0 8467 6646"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+    <radialGradient id="id0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.95884E-05 -0.999999 0.999999 2.95884E-05 28 8438)" cx="4233.33" cy="4205.21" r="1351.88" fx="4233.33" fy="4205.21">
+     <stop offset="0" stop-opacity="1" stop-color="#005A9F"/>
+     <stop offset="0.631373" stop-opacity="1" stop-color="#3387C2"/>
+     <stop offset="1" stop-opacity="1" stop-color="#66B4E5"/>
+    </radialGradient>
+    <radialGradient id="id1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.3815 0.568843 -0.487247 1.18366 54 -3037)" cx="4233.33" cy="3424.67" r="451.48" fx="4233.33" fy="3424.67">
+     <stop offset="0" stop-opacity="1" stop-color="#FFF8B8"/>
+     <stop offset="0.309804" stop-opacity="1" stop-color="#FBCA5C"/>
+     <stop offset="1" stop-opacity="1" stop-color="#F89D00"/>
+    </radialGradient>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1750777719712">
+   <circle fill="#005A9F" cx="4233" cy="4232" r="2415"/>
+   <path fill="url(#id0)" fill-rule="nonzero" d="M4233 1151c851,0 1622,344 2179,902 558,558 903,1328 903,2179 0,609 -176,1176 -481,1654l-202 -119c284,-443 448,-970 448,-1535 0,-786 -318,-1498 -834,-2013 -515,-515 -1227,-834 -2013,-834 -786,0 -1498,319 -2013,834 -515,515 -834,1227 -834,2013 0,466 112,905 310,1293l-193 138c-224,-427 -351,-914 -351,-1431 0,-851 345,-1621 902,-2179 558,-558 1328,-902 2179,-902zm0 -1152c1169,0 2228,474 2994,1240 766,766 1240,1824 1240,2993 0,822 -234,1589 -640,2238l-67 -40c398,-637 628,-1391 628,-2198 0,-1147 -465,-2186 -1217,-2938 -752,-752 -1790,-1217 -2938,-1217 -1147,0 -2186,465 -2938,1217 -752,752 -1217,1791 -1217,2938 0,750 199,1453 546,2060l-64 46c-356,-620 -560,-1339 -560,-2106 0,-1169 474,-2227 1240,-2993 766,-766 1824,-1240 2993,-1240zm0 544c1019,0 1941,413 2609,1081 667,667 1080,1590 1080,2608 0,721 -207,1394 -564,1962l-135 -80c344,-545 543,-1190 543,-1882 0,-975 -396,-1858 -1035,-2497 -639,-640 -1522,-1035 -2498,-1035 -975,0 -1858,395 -2497,1035 -640,639 -1035,1522 -1035,2497 0,615 157,1192 433,1695l-128 92c-294,-529 -461,-1138 -461,-1787 0,-1018 412,-1941 1080,-2608 667,-668 1590,-1081 2608,-1081z"/>
+   <path fill="url(#id1)" d="M4233 5375c-612,856 -1604,575 -1963,-25 532,228 1092,356 1425,-136 567,-904 -1072,-1418 -924,-150 -1178,-755 199,-2071 1077,-1188 -302,-549 -69,-965 385,-1326 455,361 688,777 386,1326 877,-883 2255,433 1077,1188 148,-1268 -1492,-754 -924,150 333,492 892,364 1425,136 -360,600 -1351,881 -1964,25z"/>
+  </g>
+ </g>
+</svg>

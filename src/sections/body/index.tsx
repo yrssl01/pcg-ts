@@ -3,6 +3,7 @@ import { About } from './about'
 import { Metrics } from './metrics'
 import { Projects } from './projects'
 import { Services } from './services'
+import { Partners } from './partners'
 
 export function SectionBody() {
   return (
@@ -10,6 +11,7 @@ export function SectionBody() {
       <About />
       <Metrics />
       <Services />
+      <Partners />
       <Projects />
     </>
   )

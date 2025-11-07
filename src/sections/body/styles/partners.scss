@@ -1,0 +1,51 @@
+// partners.scss
+$bp-xl: 1400px;
+$gap: 24px; // шаг между плитками
+$cols-mobile: 3; // количество колонок < 1400px
+$cols-desktop: 5; // количество колонок ≥ 1400px
+
+.partners {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Плитка логотипа: 3 колонки по умолчанию
+  &__point {
+    flex: 0 0 calc((100% - ($cols-mobile - 1) * $gap) / $cols-mobile);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // При ширине ≥ 1400px — 5 колонок
+  @media (min-width: $bp-xl) {
+    &__point {
+      flex-basis: calc((100% - ($cols-desktop - 1) * $gap) / $cols-desktop);
+    }
+  }
+
+  // Контейнер под логотип: выравнивание и контроль высоты
+  &__block-image {
+    width: 100%;
+    height: 80px; // настройте под ваш макет
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img,
+    svg {
+      width: 100%;
+      max-height: 56px; // визуально выравнивает разную пропорцию логотипов
+      object-fit: contain;
+      display: block;
+      transition: all 0.25s ease;
+    }
+  }
+}
+
+/* Старые правила с отрицательными отступами и спец-обработкой первого элемента больше не нужны */
