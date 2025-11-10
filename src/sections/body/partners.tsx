@@ -20,13 +20,13 @@ const logos = Object.entries(modules)
 export function Partners() {
   return (
     <>
-      <section className="section">
+      <section className="section ">
         <Separator size="small" />
         <div className="section__body">
           <div className="section__body-col">
             <div className="section__header scale__header">
               <div className="section__header-title">
-                Наши <strong>партнеры</strong>
+                <strong>Клиенты и партнеры</strong>
               </div>
             </div>
           </div>
@@ -37,7 +37,12 @@ export function Partners() {
                   <li className="partners__point">
                     <div className="partners__block-image">
                       <div className="grayscale">
-                        <img key={l.url} src={l.url} alt={l.alt} />
+                        <img
+                          key={l.url}
+                          src={l.url}
+                          alt={l.alt}
+                          draggable={false}
+                        />
                       </div>
                     </div>
                   </li>

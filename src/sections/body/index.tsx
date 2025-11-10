@@ -4,6 +4,7 @@ import { Metrics } from './metrics'
 import { Projects } from './projects'
 import { Services } from './services'
 import { Partners } from './partners'
+import { Licenses } from './licences'
 
 export function SectionBody() {
   return (
@@ -11,8 +12,9 @@ export function SectionBody() {
       <About />
       <Metrics />
       <Services />
-      <Partners />
       <Projects />
+      <Partners />
+      <Licenses />
     </>
   )
 }

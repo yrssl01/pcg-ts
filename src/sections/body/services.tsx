@@ -45,7 +45,12 @@ export function Services() {
                 <li className="services__point">
                   <a href="" className="grayscale">
                     <div className="services__block-image">
-                      <img src={service1} alt="" loading="lazy" />
+                      <img
+                        src={service1}
+                        alt=""
+                        loading="lazy"
+                        draggable={false}
+                      />
                     </div>
                     <h5 className="services__block-title">
                       Услуги девелопмента
@@ -55,7 +60,12 @@ export function Services() {
                 <li className="services__point">
                   <a href="" className="grayscale">
                     <div className="services__block-image">
-                      <img src={service2} alt="" loading="lazy" />
+                      <img
+                        src={service2}
+                        alt=""
+                        loading="lazy"
+                        draggable={false}
+                      />
                     </div>
                     <h5 className="services__block-title">
                       Управление проектом
@@ -65,7 +75,12 @@ export function Services() {
                 <li className="services__point">
                   <a href="" className="grayscale">
                     <div className="services__block-image">
-                      <img src={service3} alt="" loading="lazy" />
+                      <img
+                        src={service3}
+                        alt=""
+                        loading="lazy"
+                        draggable={false}
+                      />
                     </div>
                     <h5 className="services__block-title">
                       Разработка проекта
@@ -82,7 +97,12 @@ export function Services() {
                     <li className="services__point">
                       <a href="" className="grayscale">
                         <div className="services__block-image">
-                          <img src={service4} alt="" loading="lazy" />
+                          <img
+                            src={service4}
+                            alt=""
+                            loading="lazy"
+                            draggable={false}
+                          />
                         </div>
                         <h5 className="services__block-title">
                           Экспертные работы
@@ -92,7 +112,12 @@ export function Services() {
                     <li className="services__point">
                       <a href="" className="grayscale">
                         <div className="services__block-image">
-                          <img src={service5} alt="" loading="lazy" />
+                          <img
+                            src={service5}
+                            alt=""
+                            loading="lazy"
+                            draggable={false}
+                          />
                         </div>
                         <h5 className="services__block-title">
                           Надзорные услуги
@@ -102,7 +127,12 @@ export function Services() {
                     <li className="services__point">
                       <a href="" className="grayscale">
                         <div className="services__block-image">
-                          <img src={service6} alt="" loading="lazy" />
+                          <img
+                            src={service6}
+                            alt=""
+                            loading="lazy"
+                            draggable={false}
+                          />
                         </div>
                         <h5 className="services__block-title">
                           Строительно-монтажные работы (СМР)
@@ -112,7 +142,12 @@ export function Services() {
                     <li className="services__point">
                       <a href="" className="grayscale">
                         <div className="services__block-image">
-                          <img src={service7} alt="" loading="lazy" />
+                          <img
+                            src={service7}
+                            alt=""
+                            loading="lazy"
+                            draggable={false}
+                          />
                         </div>
                         <h5 className="services__block-title">
                           Аттестованные эксперты
@@ -122,7 +157,12 @@ export function Services() {
                     <li className="services__point">
                       <a href="" className="grayscale">
                         <div className="services__block-image">
-                          <img src={service8} alt="" loading="lazy" />
+                          <img
+                            src={service8}
+                            alt=""
+                            loading="lazy"
+                            draggable={false}
+                          />
                         </div>
                         <h5 className="services__block-title">
                           Экспертный выезд
@@ -132,7 +172,12 @@ export function Services() {
                     <li className="services__point">
                       <a href="" className="grayscale">
                         <div className="services__block-image">
-                          <img src={service9} alt="" loading="lazy" />
+                          <img
+                            src={service9}
+                            alt=""
+                            loading="lazy"
+                            draggable={false}
+                          />
                         </div>
                         <h5 className="services__block-title">
                           Полное оснащение
