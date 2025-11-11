@@ -47,14 +47,11 @@ export function Footer() {
                   ></a>
                   <a href="mailto:std.project@mail.ru">std.project@mail.ru</a>
                   <br />
-                  <a href="https://www.std-pro.kz">www.std-pro.kz</a>
+                  <a href="https://std-pro.kz" target="_blank">
+                    www.std-pro.kz
+                  </a>
                 </div>
               </div>
-              {/* <div className="footer__block-col">
-                <div className="footer__block-title">
-                  <ul className="social__list"></ul>
-                </div>
-              </div> */}
             </div>
           </div>
           <div className="section__body-col">
