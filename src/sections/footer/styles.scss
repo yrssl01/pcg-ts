@@ -7,6 +7,7 @@
   }
 
   .icon {
+    text-decoration: none;
     display: inline-block;
     width: 1.06rem;
     height: 1.06rem;
@@ -51,10 +52,10 @@
       max-width: 100%;
       padding: 42px 16px 0;
 
-      @media (min-width: 1200px) {
-        flex-basis: 50%;
-        max-width: 50%;
-      }
+      // @media (min-width: 1200px) {
+      //   flex-basis: 50%;
+      //   max-width: 50%;
+      // }
     }
 
     &-title {

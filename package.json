@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iminside/react-yandex-maps": "^1.2.7",
+    "antd": "^5.28.1",
     "bootstrap": "^5.3.8",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",

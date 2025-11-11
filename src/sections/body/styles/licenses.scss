@@ -1,0 +1,25 @@
+.section__licenses {
+  p {
+    margin-bottom: 0 !important;
+  }
+
+  p + p {
+    margin-top: 1rem !important;
+  }
+
+  ul {
+    list-style-type: none;
+
+    & > li {
+      //   text-indent: -5px;
+      &::before {
+        content: '- ';
+        // text-indent: -5px;
+      }
+    }
+
+    & + p {
+      margin-top: 1rem;
+    }
+  }
+}
