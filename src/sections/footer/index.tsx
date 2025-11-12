@@ -43,6 +43,7 @@ export function Footer() {
                   <a
                     title="WhatsApp"
                     href="https://api.whatsapp.com/send?phone=77273111105"
+                    target="_blank"
                     className="icon icon_whatsapp"
                   ></a>
                   <a href="mailto:std.project@mail.ru">std.project@mail.ru</a>
@@ -56,15 +57,16 @@ export function Footer() {
           </div>
           <div className="section__body-col">
             <div className="footer__subtitle">Мы на карте</div>
-            <div className="footer__block">
-              <div className="footer__block-col">
-                <div className="footer__block-content">
-                  <YMaps>
-                    <Map defaultState={defaultState} height={300}>
-                      <Placemark geometry={[43.216674, 76.904928]} />
-                    </Map>
-                  </YMaps>
-                </div>
+            <div className="footer__block-map">
+              <div className="footer__map">
+                <YMaps>
+                  <Map
+                    defaultState={defaultState}
+                    className="footer__map-content"
+                  >
+                    <Placemark geometry={[43.216674, 76.904928]} />
+                  </Map>
+                </YMaps>
               </div>
             </div>
           </div>

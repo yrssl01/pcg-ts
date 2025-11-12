@@ -34,6 +34,16 @@
     }
   }
 
+  &__map {
+    flex: 1 1 auto;
+    min-height: 300px;
+
+    &-content {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   &__subtitle {
     font-size: 1.4rem;
     color: var(--color-primary);
@@ -46,6 +56,15 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 -16px;
+
+    &-map {
+      // margin: 0 -16px;
+      padding: 42px 0;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-height: 0;
+    }
 
     &-col {
       flex-basis: 100%;
