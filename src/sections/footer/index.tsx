@@ -6,7 +6,7 @@ import './styles.scss'
 export function Footer() {
   const defaultState = {
     center: [43.216674, 76.904928],
-    zoom: 18,
+    zoom: 16,
   }
 
   return (
