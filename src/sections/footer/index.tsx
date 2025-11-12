@@ -64,7 +64,10 @@ export function Footer() {
                     defaultState={defaultState}
                     className="footer__map-content"
                   >
-                    <Placemark geometry={[43.216674, 76.904928]} />
+                    <Placemark
+                      geometry={[43.216674, 76.904928]}
+                      options={{ iconColor: '#26bbff' }}
+                    />
                   </Map>
                 </YMaps>
               </div>

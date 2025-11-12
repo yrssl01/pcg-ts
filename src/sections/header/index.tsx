@@ -25,7 +25,7 @@ export function HeaderSection() {
             <Logo className="header__logo" />
             <div className="section__header margin-top" data-scroll="title">
               <div className="section__header-title">
-                Архитектура <strong>со смыслом</strong>
+                Проектирование <strong>со смыслом</strong>
               </div>
               <div className="section__header-subtitle">
                 Project Construction Group
