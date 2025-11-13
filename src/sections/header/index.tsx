@@ -2,11 +2,19 @@ import { Logo } from '../../components/logo'
 import './styles.scss'
 import bgVideo from '../../assets/video/background-video.mp4'
 import { Separator } from '../../components/separ'
+// import { Header } from './header'
 
-export function HeaderSection() {
+import type { ReactNode } from 'react'
+
+type HeaderSectionProps = {
+  headerSlot?: ReactNode
+}
+
+export function HeaderSection({ headerSlot }: HeaderSectionProps) {
   return (
     <>
       <section className="header section section__back">
+        {headerSlot}
         <video
           autoPlay
           muted
@@ -16,9 +24,6 @@ export function HeaderSection() {
         >
           <source src={bgVideo} type="video/mp4" />
         </video>
-        <div className="header__header">
-          <Logo className="header__header-logo" />
-        </div>
         <Separator size="small" border="top" />
         <div className="section__body header__body">
           <div className="header__body-col fullwidth">

@@ -21,7 +21,7 @@ export function About() {
               <div className="section__header-subtitle">Информация о нас</div>
             </div>
             <div className="section__buttons">
-              <a href="" className="button">
+              <a href="#footer" className="button">
                 Наш офис
               </a>
             </div>

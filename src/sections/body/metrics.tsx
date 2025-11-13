@@ -68,7 +68,7 @@ export function Metrics() {
               </p>
             </div>
             <div className="section__buttons">
-              <a href="" className="button">
+              <a href="#feedback" className="button">
                 Начнем проект вместе!
               </a>
             </div>

@@ -1,22 +1,28 @@
-import { HeaderSection } from './sections/header'
 import './App.scss'
-import { SectionBody } from './sections/body'
-import { GridLines } from './components/grid'
 import { useScrollTitlesInit } from './components/utils/useScrollTitlesInit'
-import { Footer } from './sections/footer'
-import { Feedback } from './sections/feedback'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { MainLayout } from './layouts/main'
+import { HomePage } from './pages/homepage'
+import { HomeLayout } from './layouts/home'
+import { InnerLayout } from './layouts/inner'
 
 function App() {
   useScrollTitlesInit()
 
   return (
-    <>
-      <GridLines />
-      <HeaderSection />
-      <SectionBody />
-      <Feedback />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route element={<HomeLayout />}>
+            <Route path="/" element={<HomePage />} />
+          </Route>
+          <Route element={<InnerLayout />}>
+            <Route path="/services/:servicesId" />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

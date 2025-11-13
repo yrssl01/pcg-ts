@@ -1,9 +1,9 @@
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import logo from './pcg-logo.svg'
 import './styles.scss'
 
 export function Logo({ className = '' }) {
-  //   const navigate = useNavigate()
+  const navigate = useNavigate()
 
   return (
     <img
@@ -11,7 +11,7 @@ export function Logo({ className = '' }) {
       alt="logo"
       className={`logo pointer ${className}`}
       draggable={false}
-      //   onClick={() => navigate('/')}
+      onClick={() => navigate('/')}
     />
   )
 }

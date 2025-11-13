@@ -7,7 +7,7 @@ export function Feedback() {
 
   return (
     <>
-      <section className="section feedback">
+      <section id="feedback" className="section feedback">
         <Separator size="small" />
         <form method="post" className="section__body">
           <div className="section__body-col">

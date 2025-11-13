@@ -11,7 +11,7 @@ export function Footer() {
 
   return (
     <>
-      <section className="section footer">
+      <section id="footer" className="section footer">
         <Separator />
         <div className="section__body">
           <div className="section__body-col footer__title">

@@ -14,7 +14,7 @@ import referenceList from '../../assets/documents/reference-list.pdf'
 
 import { Separator } from '../../components/separ'
 
-export function Services() {
+export function ServicesSection() {
   const [showServices, setShowServices] = useState(false)
 
   const handleButtonClick = () => {
@@ -34,7 +34,7 @@ export function Services() {
               <div className="section__header-subtitle">Наши услуги</div>
             </div>
             <div className="section__buttons">
-              <a href={referenceList} className="button">
+              <a href={referenceList} target="_blank" className="button">
                 Референс-лист
               </a>
             </div>
