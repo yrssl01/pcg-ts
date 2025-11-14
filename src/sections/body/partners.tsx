@@ -34,7 +34,7 @@ export function Partners() {
             <div id="partners">
               <ul className="partners__wrapper">
                 {logos.map((l) => (
-                  <li className="partners__point">
+                  <li className="partners__point" key={l.alt}>
                     <div className="partners__block-image">
                       <div className="grayscale">
                         <img

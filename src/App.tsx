@@ -6,6 +6,7 @@ import { MainLayout } from './layouts/main'
 import { HomePage } from './pages/homepage'
 import { HomeLayout } from './layouts/home'
 import { InnerLayout } from './layouts/inner'
+import { Services } from './pages/services'
 
 function App() {
   useScrollTitlesInit()
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
           </Route>
           <Route element={<InnerLayout />}>
+            <Route path="/services/" element={<Services />} />
             <Route path="/services/:servicesId" />
           </Route>
         </Route>
