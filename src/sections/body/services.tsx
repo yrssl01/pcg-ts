@@ -1,4 +1,6 @@
+// ServicesSection.tsx
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './styles/services.scss'
 
 import service1 from '../../assets/images/service-icons/map.png'
@@ -14,6 +16,25 @@ import referenceList from '../../assets/documents/reference-list.pdf'
 
 import { Separator } from '../../components/separ'
 
+const servicesWithPages = [
+  { icon: service1, title: 'Девелоперские услуги', slug: 'development' },
+  { icon: service2, title: 'Управление проектом', slug: 'project-management' },
+  { icon: service3, title: 'Разработка проекта', slug: 'design' },
+  { icon: service4, title: 'Экспертные работы', slug: 'research' },
+  { icon: service5, title: 'Надзорные услуги', slug: 'supervision' },
+  {
+    icon: service6,
+    title: 'Строительно-монтажные работы (СМР)',
+    slug: 'construction',
+  }, // 6
+]
+
+const servicesWithoutPages = [
+  { icon: service7, title: 'Аттестованные эксперты' },
+  { icon: service8, title: 'Экспертный выезд' },
+  { icon: service9, title: 'Полное оснащение' },
+]
+
 export function ServicesSection() {
   const [showServices, setShowServices] = useState(false)
 
@@ -22,179 +43,103 @@ export function ServicesSection() {
   }
 
   return (
-    <>
-      <section className="section">
-        <Separator size="small" />
-        <div className="section__body">
-          <div className="section__body-col">
-            <div className="section__header scale__header">
-              <div className="section__header-title">
-                Что мы <strong>предоставляем</strong>
-              </div>
-              <div className="section__header-subtitle">Наши услуги</div>
+    <section className="section">
+      <Separator size="small" border="top" />
+      <div className="section__body">
+        <div className="section__body-col">
+          <div className="section__header scale__header">
+            <div className="section__header-title">
+              Что мы <strong>предоставляем</strong>
             </div>
-            <div className="section__buttons">
-              <a href={referenceList} target="_blank" className="button">
-                Референс-лист
-              </a>
-            </div>
+            <div className="section__header-subtitle">Наши услуги</div>
           </div>
-          <div className="section__body-col">
-            <div id="services">
-              <ul className="services__wrapper">
-                <li className="services__point">
-                  <a href="" className="grayscale">
-                    <div className="services__block-image">
-                      <img
-                        src={service1}
-                        alt=""
-                        loading="lazy"
-                        draggable={false}
-                      />
-                    </div>
-                    <h5 className="services__block-title">
-                      Услуги девелопмента
-                    </h5>
-                  </a>
-                </li>
-                <li className="services__point">
-                  <a href="" className="grayscale">
-                    <div className="services__block-image">
-                      <img
-                        src={service2}
-                        alt=""
-                        loading="lazy"
-                        draggable={false}
-                      />
-                    </div>
-                    <h5 className="services__block-title">
-                      Управление проектом
-                    </h5>
-                  </a>
-                </li>
-                <li className="services__point">
-                  <a href="" className="grayscale">
-                    <div className="services__block-image">
-                      <img
-                        src={service3}
-                        alt=""
-                        loading="lazy"
-                        draggable={false}
-                      />
-                    </div>
-                    <h5 className="services__block-title">
-                      Разработка проекта
-                    </h5>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <Separator size="small" />
-            {showServices && (
-              <div className="more__services">
-                <div>
-                  <ul className="services__wrapper">
-                    <li className="services__point">
-                      <a href="" className="grayscale">
-                        <div className="services__block-image">
-                          <img
-                            src={service4}
-                            alt=""
-                            loading="lazy"
-                            draggable={false}
-                          />
-                        </div>
-                        <h5 className="services__block-title">
-                          Экспертные работы
-                        </h5>
-                      </a>
-                    </li>
-                    <li className="services__point">
-                      <a href="" className="grayscale">
-                        <div className="services__block-image">
-                          <img
-                            src={service5}
-                            alt=""
-                            loading="lazy"
-                            draggable={false}
-                          />
-                        </div>
-                        <h5 className="services__block-title">
-                          Надзорные услуги
-                        </h5>
-                      </a>
-                    </li>
-                    <li className="services__point">
-                      <a href="" className="grayscale">
-                        <div className="services__block-image">
-                          <img
-                            src={service6}
-                            alt=""
-                            loading="lazy"
-                            draggable={false}
-                          />
-                        </div>
-                        <h5 className="services__block-title">
-                          Строительно-монтажные работы (СМР)
-                        </h5>
-                      </a>
-                    </li>
-                    <li className="services__point">
-                      <a href="" className="grayscale">
-                        <div className="services__block-image">
-                          <img
-                            src={service7}
-                            alt=""
-                            loading="lazy"
-                            draggable={false}
-                          />
-                        </div>
-                        <h5 className="services__block-title">
-                          Аттестованные эксперты
-                        </h5>
-                      </a>
-                    </li>
-                    <li className="services__point">
-                      <a href="" className="grayscale">
-                        <div className="services__block-image">
-                          <img
-                            src={service8}
-                            alt=""
-                            loading="lazy"
-                            draggable={false}
-                          />
-                        </div>
-                        <h5 className="services__block-title">
-                          Экспертный выезд
-                        </h5>
-                      </a>
-                    </li>
-                    <li className="services__point">
-                      <a href="" className="grayscale">
-                        <div className="services__block-image">
-                          <img
-                            src={service9}
-                            alt=""
-                            loading="lazy"
-                            draggable={false}
-                          />
-                        </div>
-                        <h5 className="services__block-title">
-                          Полное оснащение
-                        </h5>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            )}
-            <button className="button-more" onClick={handleButtonClick}>
-              {showServices ? 'Скрыть' : 'Еще больше'}
-            </button>
+          <div className="section__buttons">
+            <a
+              href={referenceList}
+              target="_blank"
+              rel="noreferrer"
+              className="button"
+            >
+              Референс-лист
+            </a>
           </div>
         </div>
-        <Separator size="small" border="bottom" />
-      </section>
-    </>
+
+        <div className="section__body-col">
+          <div id="services">
+            <ul className="services__wrapper">
+              {servicesWithPages.slice(0, 3).map((service) => (
+                <li key={service.slug} className="services__point">
+                  <Link to={`/services/${service.slug}`} className="grayscale">
+                    <div className="services__block-image">
+                      <img
+                        src={service.icon}
+                        alt=""
+                        loading="lazy"
+                        draggable={false}
+                      />
+                    </div>
+                    <h5 className="services__block-title">{service.title}</h5>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <Separator size="small" />
+
+          {showServices && (
+            <div className="more__services">
+              <div>
+                <ul className="services__wrapper">
+                  {servicesWithPages.slice(3, 6).map((service) => (
+                    <li key={service.slug} className="services__point">
+                      <Link
+                        to={`/services/${service.slug}`}
+                        className="grayscale"
+                      >
+                        <div className="services__block-image">
+                          <img
+                            src={service.icon}
+                            alt=""
+                            loading="lazy"
+                            draggable={false}
+                          />
+                        </div>
+                        <h5 className="services__block-title">
+                          {service.title}
+                        </h5>
+                      </Link>
+                    </li>
+                  ))}
+                  {servicesWithoutPages.map((service) => (
+                    <li key={service.title} className="services__point">
+                      <div className="grayscale">
+                        <div className="services__block-image">
+                          <img
+                            src={service.icon}
+                            alt=""
+                            loading="lazy"
+                            draggable={false}
+                          />
+                        </div>
+                        <h5 className="services__block-title">
+                          {service.title}
+                        </h5>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+
+          <button className="button-more" onClick={handleButtonClick}>
+            {showServices ? 'Скрыть' : 'Еще больше'}
+          </button>
+        </div>
+      </div>
+      <Separator size="small" border="bottom" />
+    </section>
   )
 }

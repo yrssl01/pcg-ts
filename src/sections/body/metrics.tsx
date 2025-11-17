@@ -74,7 +74,7 @@ export function Metrics() {
             </div>
           </div>
         </div>
-        <Separator border="bottom" />
+        <Separator />
       </section>
     </>
   )

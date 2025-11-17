@@ -6,7 +6,7 @@ import project3 from '../../assets/images/projects/project3.jpg'
 import project4 from '../../assets/images/projects/project4.jpg'
 import project5 from '../../assets/images/projects/project5.jpg'
 
-export function Projects() {
+export function ProjectsSection() {
   return (
     <>
       <section className="section section--dark">

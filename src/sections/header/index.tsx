@@ -30,7 +30,7 @@ export function HeaderSection({ headerSlot }: HeaderSectionProps) {
             <Logo className="header__logo" />
             <div className="section__header margin-top" data-scroll="title">
               <div className="section__header-title">
-                Проектирование <strong>со смыслом</strong>
+                От концепции <strong>до строительства</strong>
               </div>
               <div className="section__header-subtitle">
                 Project Construction Group

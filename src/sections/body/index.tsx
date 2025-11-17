@@ -1,7 +1,7 @@
 import './styles/styles.scss'
 import { About } from './about'
 import { Metrics } from './metrics'
-import { Projects } from './projects'
+import { ProjectsSection } from './projects'
 import { ServicesSection } from './services'
 import { Partners } from './partners'
 import { Licenses } from './licences'
@@ -12,7 +12,7 @@ export function SectionBody() {
       <About />
       <Metrics />
       <ServicesSection />
-      <Projects />
+      <ProjectsSection />
       <Partners />
       <Licenses />
     </>
