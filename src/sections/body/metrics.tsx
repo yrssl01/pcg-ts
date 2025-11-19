@@ -52,8 +52,11 @@ export function Metrics() {
             </ul>
           </div>
           <div className="section__body-col">
-            <div className="section__content">
-              <h1>От концепции до строительства </h1>
+            <div
+              className="section__content margin-bottom"
+              style={{ marginTop: 0 }}
+            >
+              <h4>От концепции до строительства </h4>
               <p>
                 Каждый наш проект — это путь от идеи до реализованного объекта.
               </p>

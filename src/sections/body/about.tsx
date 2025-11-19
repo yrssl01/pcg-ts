@@ -20,7 +20,10 @@ export function About() {
               </div>
               <div className="section__header-subtitle">Информация о нас</div>
             </div>
-            <div className="section__buttons">
+            <div
+              className="section__buttons"
+              style={{ marginTop: 'auto', paddingTop: '4rem' }}
+            >
               <a href="#footer" className="button">
                 Наш офис
               </a>
@@ -28,7 +31,7 @@ export function About() {
           </div>
           <div className="section__body-col">
             <div className="section__content">
-              <h1>Высокое качество и профессионализм</h1>
+              <h4>Высокое качество и профессионализм</h4>
               <p>
                 Наша компания — это команда профессионалов, объединённых идеей
                 комплексного подхода к проектированию и строительству. Наша
@@ -46,7 +49,7 @@ export function About() {
               {showText && (
                 <div className="more-text">
                   <p>
-                    Мы объединяем в одном процессе:{' '}
+                    Мы объединяем в одном процессе:
                     <ul>
                       <li>Девелопмент;</li>
                       <li>Управление проектами;</li>

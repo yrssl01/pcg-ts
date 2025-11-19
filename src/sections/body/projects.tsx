@@ -5,6 +5,7 @@ import project2 from '../../assets/images/projects/project2.jpg'
 import project3 from '../../assets/images/projects/project3.jpg'
 import project4 from '../../assets/images/projects/project4.jpg'
 import project5 from '../../assets/images/projects/project5.jpg'
+import { Link } from 'react-router-dom'
 
 export function ProjectsSection() {
   return (
@@ -45,9 +46,12 @@ export function ProjectsSection() {
                   </p>
                 </div>
                 <div className="section__buttons">
-                  <a href="" className="button button--white">
-                    Посмотреть работы
-                  </a>
+                  <Link
+                    to="/projects/admin-building"
+                    className="button button--white"
+                  >
+                    Посмотреть проект
+                  </Link>
                 </div>
               </div>
             </div>
@@ -87,9 +91,12 @@ export function ProjectsSection() {
                   </p>
                 </div>
                 <div className="section__buttons">
-                  <a href="" className="button button--white">
-                    Посмотреть работы
-                  </a>
+                  <Link
+                    to="/projects/business-center"
+                    className="button button--white"
+                  >
+                    Посмотреть проект
+                  </Link>
                 </div>
               </div>
             </div>
@@ -124,9 +131,12 @@ export function ProjectsSection() {
                   </p>
                 </div>
                 <div className="section__buttons">
-                  <a href="" className="button button--white">
-                    Посмотреть работы
-                  </a>
+                  <Link
+                    to="/projects/medical-center"
+                    className="button button--white"
+                  >
+                    Посмотреть проект
+                  </Link>
                 </div>
               </div>
             </div>
@@ -161,9 +171,12 @@ export function ProjectsSection() {
                   </p>
                 </div>
                 <div className="section__buttons">
-                  <a href="" className="button button--white">
-                    Посмотреть работы
-                  </a>
+                  <Link
+                    to="/projects/tiens-office"
+                    className="button button--white"
+                  >
+                    Посмотреть проект
+                  </Link>
                 </div>
               </div>
             </div>
@@ -199,9 +212,12 @@ export function ProjectsSection() {
                   </p>
                 </div>
                 <div className="section__buttons">
-                  <a href="" className="button button--white">
-                    Посмотреть работы
-                  </a>
+                  <Link
+                    to="/projects/press-club"
+                    className="button button--white"
+                  >
+                    Посмотреть проект
+                  </Link>
                 </div>
               </div>
             </div>

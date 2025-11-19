@@ -1,5 +1,5 @@
 import './App.scss'
-import { useAutoObserveScrollTitles } from './components/utils/useAutoObserveScrollTitles'
+import { useAutoObserveScrollTitles } from './core/utils/useAutoObserveScrollTitles'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MainLayout } from './layouts/main'
@@ -9,12 +9,17 @@ import { InnerLayout } from './layouts/inner'
 import { Services } from './pages/services'
 import { Projects } from './pages/projects'
 import { ServicePage } from './pages/services/service-page'
+import ScrollToTop from './core/utils/scrollToTop'
+import { PageNotFound } from './pages/404'
+import { NotFoundLayout } from './layouts/404'
+import { ProjectPage } from './pages/projects/project-page'
 
 function App() {
   useAutoObserveScrollTitles()
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<MainLayout />}>
           <Route element={<HomeLayout />}>
@@ -24,8 +29,11 @@ function App() {
             <Route path="/services/" element={<Services />} />
             <Route path="/services/:serviceSlug" element={<ServicePage />} />
             <Route path="/projects/" element={<Projects />} />
-            <Route path="/projects/:projectId" />
+            <Route path="/projects/:projectSlug" element={<ProjectPage />} />
           </Route>
+        </Route>
+        <Route element={<NotFoundLayout />}>
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

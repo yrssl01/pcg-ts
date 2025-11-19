@@ -113,14 +113,21 @@
   }
 
   &__content {
-    // margin-top: auto;
+    margin-top: auto;
 
-    h1 {
+    h1,
+    h4 {
       font-size: 1.2rem;
       line-height: 1.4;
       margin-bottom: 1.6rem;
       font-weight: 600;
       text-transform: uppercase;
+    }
+
+    @media (max-width: 991px) {
+      h1 {
+        display: none;
+      }
     }
 
     p {
@@ -136,8 +143,8 @@
   }
 
   &__buttons {
-    margin-top: auto;
-    padding-top: 4rem;
+    // margin-top: auto;
+    margin-top: 4rem;
 
     .button {
       position: relative;
