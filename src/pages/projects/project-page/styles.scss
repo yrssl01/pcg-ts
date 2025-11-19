@@ -1,4 +1,49 @@
 .project {
+  &__header {
+    position: relative;
+
+    &-title {
+      position: relative;
+      top: 0;
+      margin-bottom: 64px;
+    }
+
+    &-list {
+      margin-top: 64px;
+
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      li {
+        margin-bottom: 0.6rem;
+      }
+
+      ul li {
+        position: relative;
+        padding-left: 1rem;
+
+        &::before {
+          content: '-';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 1rem;
+          height: 100%;
+          display: flex;
+          align-items: baseline;
+          color: var(--color-primary);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &__desc {
+    margin-top: 64px;
+  }
+
   @media (min-width: 992px) {
     min-height: 100vh;
   }
