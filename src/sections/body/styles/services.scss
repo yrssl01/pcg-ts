@@ -1,81 +1,66 @@
 .services {
   &__wrapper {
     display: flex;
-    align-items: flex-start;
-    margin: -1.2rem;
     flex-wrap: wrap;
+    margin: -1.2rem;
   }
 
   &__point {
-    max-width: calc(50% - 1.2rem * 2);
-    padding-bottom: 1.2rem;
+    margin: 1rem;
+    flex: 0 0 calc(50% - 2rem); // на мобилке: 2 в ряд
+    max-width: calc(50% - 2rem);
+    min-width: 0;
+  }
+
+  &__block-image {
+    padding-top: 70%;
     position: relative;
-    margin: 1.2rem;
+    margin-bottom: 0.6rem;
 
-    a {
-      color: inherit;
-    }
-
-    @media screen and (min-width: 575px) {
-      max-width: calc(33.333% - 1.2rem * 2);
-    }
-
-    @media screen and (min-width: 768px) {
-      max-width: calc(33.333% - 1.2rem * 2);
-    }
-
-    @media screen and (min-width: 1400px) {
-      max-width: calc(33.333% - 1.2rem * 2);
-    }
-
-    &:hover,
-    &:focus {
-      color: var(--color-primary);
+    img {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      max-width: 72px; // одинаковый размер иконок
+      max-height: 72px;
     }
   }
 
-  &__block {
-    &-title {
-      margin-bottom: 0;
-      margin-top: 0;
-    }
-
-    &-image {
-      padding-top: 70%;
-      position: relative;
-      margin-bottom: 0.6rem;
-
-      img {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
-        max-height: calc(20% + 3rem);
-      }
-    }
+  &__block-title {
+    margin: 0;
+    text-align: center;
+    word-break: break-word;
   }
 }
 
+/* только первая услуга – на всю ширину */
 @media screen and (max-width: 574px) {
   #services > .services__wrapper > .services__point:first-child {
-    max-width: 100% !important;
-    margin-left: auto;
-    margin-right: auto;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    img {
+      max-width: 128px;
+      max-height: 128px;
+    }
   }
 
-  .services__block-image {
-    padding-top: 50%;
+  .services__block-title {
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+
+  .services__block-image img {
+    max-width: 64px; // чуть меньше иконка на маленьких экранах
+    max-height: 64px;
   }
 }
 
-@media screen and (max-width: 767px) {
-  .services__block-image {
-    img {
-      left: 0;
-      margin-left: auto;
-      margin-right: auto;
-      right: 0;
-    }
+/* ≥575px – 3 колонки */
+@media screen and (min-width: 575px) {
+  .services__point {
+    flex: 0 0 calc(33.333% - 2rem);
+    max-width: calc(33.333% - 2rem);
   }
 }
 

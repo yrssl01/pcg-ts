@@ -13,30 +13,36 @@ import ScrollToTop from './core/utils/scrollToTop'
 import { PageNotFound } from './pages/404'
 import { NotFoundLayout } from './layouts/404'
 import { ProjectPage } from './pages/projects/project-page'
+import { useState } from 'react'
+import { Navigation } from './components/navigation'
 
 function App() {
+  // const [bottomHeight, setBottomHeight] = useState<number>(0)
   useAutoObserveScrollTitles()
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route element={<HomeLayout />}>
-            <Route path="/" element={<HomePage />} />
+    <>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route element={<HomeLayout />}>
+              <Route path="/" element={<HomePage />} />
+            </Route>
+            <Route element={<InnerLayout />}>
+              <Route path="/services/" element={<Services />} />
+              <Route path="/services/:serviceSlug" element={<ServicePage />} />
+              <Route path="/projects/" element={<Projects />} />
+              <Route path="/projects/:projectSlug" element={<ProjectPage />} />
+            </Route>
           </Route>
-          <Route element={<InnerLayout />}>
-            <Route path="/services/" element={<Services />} />
-            <Route path="/services/:serviceSlug" element={<ServicePage />} />
-            <Route path="/projects/" element={<Projects />} />
-            <Route path="/projects/:projectSlug" element={<ProjectPage />} />
+          <Route element={<NotFoundLayout />}>
+            <Route path="*" element={<PageNotFound />} />
           </Route>
-        </Route>
-        <Route element={<NotFoundLayout />}>
-          <Route path="*" element={<PageNotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+        <Navigation />
+      </BrowserRouter>
+    </>
   )
 }
 
