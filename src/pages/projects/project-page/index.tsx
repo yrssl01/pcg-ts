@@ -1,89 +1,63 @@
 import './styles.scss'
 
 import { useParams, Link } from 'react-router-dom'
-import type { ProjectSlug } from '../../../core/data/projects'
-import { getProjectBySlug } from '../../../core/data/projects'
+import { useEffect, useState } from 'react'
+import { fetchProject } from '../../../core/api/projects'
+import type { ProjectDto } from '../../../core/api/types'
 import { Separator } from '../../../components/separ'
 import { Image } from 'antd'
 
-const adminBuildingImages = Object.values(
-  import.meta.glob(
-    '/src/assets/images/projects/gallery/admin-building/*.{jpg,jpeg,png,webp}',
-    {
-      eager: true,
-      as: 'url',
-    }
-  )
-) as string[]
-
-const businessCenterImages = Object.values(
-  import.meta.glob(
-    '/src/assets/images/projects/gallery/business-center/*.{jpg,jpeg,png,webp}',
-    {
-      eager: true,
-      as: 'url',
-    }
-  )
-) as string[]
-
-const medicalCenterImages = Object.values(
-  import.meta.glob(
-    '/src/assets/images/projects/gallery/medical-center/*.{jpg,jpeg,png,webp}',
-    {
-      eager: true,
-      as: 'url',
-    }
-  )
-) as string[]
-
-const tiensOfficeImages = Object.values(
-  import.meta.glob(
-    '/src/assets/images/projects/gallery/tiens-office/*.{jpg,jpeg,png,webp}',
-    {
-      eager: true,
-      as: 'url',
-    }
-  )
-) as string[]
-
-const pressClubImages = Object.values(
-  import.meta.glob(
-    '/src/assets/images/projects/gallery/press-club/*.{jpg,jpeg,png,webp}',
-    {
-      eager: true,
-      as: 'url',
-    }
-  )
-) as string[]
-
-const projectGalleries: Record<ProjectSlug, string[]> = {
-  'admin-building': adminBuildingImages,
-  'business-center': businessCenterImages,
-  'medical-center': medicalCenterImages,
-  'tiens-office': tiensOfficeImages,
-  'press-club': pressClubImages,
-}
-
-import adminBuildingPlan from '../../../assets/images/projects/plans/admin_building_plan.jpg'
-import businessCenterPlan from '../../../assets/images/projects/plans/admin_building_plan.jpg'
-import medicalCenterPlan from '../../../assets/images/projects/plans/admin_building_plan.jpg'
-import tiensOfficePlan from '../../../assets/images/projects/plans/tiens_office_plan.jpg'
-import pressClubPlan from '../../../assets/images/projects/plans/press_club_plan.jpg'
-
-const projectPlans: Partial<Record<ProjectSlug, string>> = {
-  'admin-building': adminBuildingPlan,
-  'business-center': businessCenterPlan,
-  'medical-center': medicalCenterPlan,
-  'tiens-office': tiensOfficePlan,
-  'press-club': pressClubPlan,
-}
-
 export function ProjectPage() {
-  const { projectSlug } = useParams<{ projectSlug: ProjectSlug }>()
-  const project = getProjectBySlug(projectSlug)
-  const images = projectSlug ? projectGalleries[projectSlug] ?? [] : []
+  const { projectSlug } = useParams<{ projectSlug: string }>()
+  const [project, setProject] = useState<ProjectDto | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
-  if (!project) return
+  useEffect(() => {
+    if (!projectSlug) return
+    setLoading(true)
+    setError(null)
+
+    fetchProject(projectSlug)
+      .then((data) => {
+        setProject(data)
+        setLoading(false)
+      })
+      .catch((err) => {
+        console.error(err)
+        setError('Не удалось загрузить проект')
+        setLoading(false)
+      })
+  }, [projectSlug])
+
+  if (loading) {
+    return (
+      <section className="section">
+        <div className="section__body">
+          <div className="section__body-col">Загрузка проекта…</div>
+          {/* TODO */}
+        </div>
+      </section>
+    )
+  }
+
+  if (error || !project) {
+    return (
+      <section className="section">
+        <div className="section__body">
+          <div className="section__body-col">
+            <h1>Проект не найден</h1>
+            <p>{error ?? 'Проверьте корректность ссылки.'}</p>
+            <Link to="/#projects" className="button">
+              К проектам
+            </Link>
+
+            {/* TODO */}
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <>
@@ -147,33 +121,36 @@ export function ProjectPage() {
               </div>
               <div className="section__content project__header-list">
                 <ul>
-                  <li>
-                    <strong>Адрес: </strong>
-                    {project.address}
-                  </li>
+                  {project.address && (
+                    <li>
+                      <strong>Адрес: </strong>
+                      {project.address}
+                    </li>
+                  )}
                   {project.period && (
                     <li>
                       <strong>Сроки строительства: </strong>
                       {project.period}
                     </li>
                   )}
-
-                  <li>
-                    <strong>Нами проведены/проводятся: </strong>
-                    {project.services.join(', ')}
-                  </li>
+                  {project.services.length > 0 && (
+                    <li>
+                      <strong>Нами проведены/проводятся: </strong>
+                      {project.services.map((s) => s.title).join(', ')}
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
             <div className="section__content project__desc">
               <h4>Описание проекта</h4>
-              <p>{project.shortDescription}</p>
-              <p>{project.extraDescription}</p>
+              <p>{project.description}</p>
+              {project.extra_description && <p>{project.extra_description}</p>}
             </div>
             <div className="project__plan"></div>
             <div className="project__plan"></div>
           </div>
-          {images.length > 0 && (
+          {project.images.length > 0 && (
             <div className="section__body-col project-gallery">
               <div className="project-gallery__header">
                 <div className="section__header" data-scroll="title">
@@ -185,16 +162,20 @@ export function ProjectPage() {
               </div>
               <ul className="project-gallery__list off">
                 <Image.PreviewGroup>
-                  {images.map((src, index) => (
-                    <li className="project-gallery__list-point">
-                      <div className="project-gallery__item">
-                        <Image
-                          src={src}
-                          className="project-gallery__item-image"
-                        />
-                      </div>
-                    </li>
-                  ))}
+                  {project.images.map((img, index) => {
+                    const src = img.image
+                    return (
+                      <li className="project-gallery__list-point">
+                        <div className="project-gallery__item">
+                          <Image
+                            src={src}
+                            alt={`${project.title} - ${index + 1}`}
+                            className="project-gallery__item-image"
+                          />
+                        </div>
+                      </li>
+                    )
+                  })}
                 </Image.PreviewGroup>
               </ul>
             </div>
