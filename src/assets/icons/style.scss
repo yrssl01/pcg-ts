@@ -29,6 +29,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.pcg-chevron-left {
+  &::before {
+    content: $pcg-chevron-left;
+  }
+}
+
+.pcg-chevron-right {
+  &::before {
+    content: $pcg-chevron-right;
+  }
+}
+
 .pcg-home {
   &:before {
     content: $pcg-home;

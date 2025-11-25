@@ -3,7 +3,7 @@ import './styles/projects.scss'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchProjects } from '../../core/api/projects'
-import type { ProjectDto } from '../../core/api/types'
+import type { ProjectDto } from '../../core/api/projectTypes'
 import { ProjectCardSkeleton } from '../../components/project-skeleton'
 
 export function ProjectsSection() {

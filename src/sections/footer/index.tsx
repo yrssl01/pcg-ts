@@ -47,10 +47,6 @@ export function Footer() {
                     className="icon icon_whatsapp"
                   ></a>
                   <a href="mailto:std.project@mail.ru">std.project@mail.ru</a>
-                  <br />
-                  <a href="https://std-pro.kz" target="_blank">
-                    www.std-pro.kz
-                  </a>
                 </div>
               </div>
             </div>

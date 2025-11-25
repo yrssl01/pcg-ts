@@ -162,3 +162,39 @@
     width: auto !important;
   }
 }
+
+.perelink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  line-height: 1.2;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-black);
+  text-transform: uppercase;
+
+  &.next {
+    justify-content: flex-end;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    span {
+      color: var(--color-primary);
+    }
+  }
+
+  @media (min-width: 1400px) {
+    padding: 1.2vw 1.5vw;
+  }
+
+  @media (max-width: 991px) {
+    justify-content: center !important;
+  }
+
+  span {
+    transition: 0.15s all ease-in-out;
+    font-size: 1rem;
+  }
+}

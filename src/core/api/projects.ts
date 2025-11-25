@@ -1,7 +1,5 @@
-import type { ProjectDto } from './types'
-
-const API_BASE =
-  import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000/api'
+import type { ProjectDto } from './projectTypes'
+import { API_BASE } from '.'
 
 export async function fetchProjects(): Promise<ProjectDto[]> {
   const res = await fetch(`${API_BASE}/projects/`)

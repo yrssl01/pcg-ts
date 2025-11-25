@@ -1,15 +1,17 @@
 import './styles.scss'
 
 import { useParams, Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { fetchProject } from '../../../core/api/projects'
-import type { ProjectDto } from '../../../core/api/types'
+import { useEffect, useMemo, useState } from 'react'
+import { fetchProject, fetchProjects } from '../../../core/api/projects'
+import type { ProjectDto } from '../../../core/api/projectTypes'
 import { Separator } from '../../../components/separ'
 import { Image } from 'antd'
+import { ProjectDetailSkeleton } from '../../../components/project-skeleton'
 
 export function ProjectPage() {
   const { projectSlug } = useParams<{ projectSlug: string }>()
   const [project, setProject] = useState<ProjectDto | null>(null)
+  const [allProjects, setAllProjects] = useState<ProjectDto[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -18,9 +20,10 @@ export function ProjectPage() {
     setLoading(true)
     setError(null)
 
-    fetchProject(projectSlug)
-      .then((data) => {
-        setProject(data)
+    Promise.all([fetchProject(projectSlug), fetchProjects()])
+      .then(([projectData, projectsData]) => {
+        setProject(projectData)
+        setAllProjects(projectsData)
         setLoading(false)
       })
       .catch((err) => {
@@ -30,15 +33,27 @@ export function ProjectPage() {
       })
   }, [projectSlug])
 
+  const { prevProject, nextProject } = useMemo(() => {
+    if (!project || allProjects.length === 0) {
+      return {
+        prevProject: null as ProjectDto | null,
+        nextProject: null as ProjectDto | null,
+      }
+    }
+
+    const index = allProjects.findIndex((p) => p.slug === project.slug)
+    if (index === -1) {
+      return { prevProject: null, nextProject: null }
+    }
+
+    const prev = index > 0 ? allProjects[index - 1] : null
+    const next = index < allProjects.length - 1 ? allProjects[index + 1] : null
+
+    return { prevProject: prev, nextProject: next }
+  }, [project, allProjects])
+
   if (loading) {
-    return (
-      <section className="section">
-        <div className="section__body">
-          <div className="section__body-col">Загрузка проекта…</div>
-          {/* TODO */}
-        </div>
-      </section>
-    )
+    return <ProjectDetailSkeleton />
   }
 
   if (error || !project) {
@@ -168,6 +183,7 @@ export function ProjectPage() {
                       <li className="project-gallery__list-point">
                         <div className="project-gallery__item">
                           <Image
+                            loading="lazy"
                             src={src}
                             alt={`${project.title} - ${index + 1}`}
                             className="project-gallery__item-image"
@@ -181,8 +197,33 @@ export function ProjectPage() {
             </div>
           )}
         </div>
-        <Separator size="small" border="bottom" />
-        <Separator />
+        <Separator border="bottom" />
+      </section>
+      <section className="section">
+        <div className="section__body">
+          <div className="section__body-col">
+            {prevProject && (
+              <Link
+                to={`/projects/${prevProject.slug}`}
+                className="perelink prev"
+              >
+                <span className="pcg pcg-chevron-left" />
+                {prevProject.title}
+              </Link>
+            )}
+          </div>
+          <div className="section__body-col">
+            {nextProject && (
+              <Link
+                to={`/projects/${nextProject.slug}`}
+                className="perelink next"
+              >
+                {nextProject.title}
+                <span className="pcg pcg-chevron-right" />
+              </Link>
+            )}
+          </div>
+        </div>
       </section>
     </>
   )
