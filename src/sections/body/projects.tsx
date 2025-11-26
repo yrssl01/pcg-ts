@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchProjects } from '../../core/api/projects'
 import type { ProjectDto } from '../../core/api/projectTypes'
-import { ProjectCardSkeleton } from '../../components/project-skeleton'
+import { ProjectCardSkeleton } from '../../components/skeleton'
 
 export function ProjectsSection() {
   const [projects, setProjects] = useState<ProjectDto[]>([])

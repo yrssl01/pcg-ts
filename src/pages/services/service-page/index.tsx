@@ -1,22 +1,46 @@
 import './styles.scss'
 import { Separator } from '../../../components/separ'
 import { useParams, Link } from 'react-router-dom'
-import { getServiceBySlug } from '../../../core/data/services'
-import type { ServiceSlug } from '../../../core/data/services'
+import { fetchService } from '../../../core/api/services'
+import type { ServiceDetailDto } from '../../../core/api/serviceTypes'
 import { Image } from 'antd'
-
-const designImages = Object.values(
-  import.meta.glob('/src/assets/images/services/design/*.{jpg,jpeg,png,webp}', {
-    eager: true,
-    as: 'url',
-  })
-) as string[]
+import { useEffect, useState } from 'react'
+import { ServiceDetailSkeleton } from '../../../components/skeleton'
 
 export function ServicePage() {
-  const { serviceSlug } = useParams<{ serviceSlug: ServiceSlug }>()
-  const service = getServiceBySlug(serviceSlug)
+  const { serviceSlug } = useParams<{ serviceSlug: string }>()
+  const [service, setService] = useState<ServiceDetailDto | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
-  if (!service) {
+  useEffect(() => {
+    if (!serviceSlug) return
+
+    setLoading(true)
+    setError(null)
+
+    fetchService(serviceSlug)
+      .then((data) => {
+        if (!data.has_detail_page) {
+          setError('Для этой услуги нет детальной страницы')
+          setService(null)
+        } else {
+          setService(data)
+        }
+        setLoading(false)
+      })
+      .catch((err) => {
+        console.error(err)
+        setError('Не удалось загрузить услугу')
+        setLoading(false)
+      })
+  }, [serviceSlug])
+
+  if (loading) {
+    return <ServiceDetailSkeleton />
+  }
+
+  if (error || !service) {
     return (
       <>
         <section className="section">
@@ -60,8 +84,10 @@ export function ServicePage() {
         <div className="section__body">
           <div className="section__body-col">
             <div className="section__header" data-scroll="title">
-              <div className="section__header-title">{service?.title}</div>
-              <div className="section__header-subtitle">{service?.intro}</div>
+              <div className="section__header-title">{service.title}</div>
+              <div className="section__header-subtitle">
+                {service.description}
+              </div>
               <div className="crumbs">
                 <ul
                   className="crumbs__list"
@@ -109,22 +135,64 @@ export function ServicePage() {
             </div>
           </div>
           <div className="section__body-col">
-            <div className="section__content">
-              {service?.sections.map((section) => (
-                <div key={section.id}>
-                  <h4>{section.title}</h4>
-                  <p>{section.text}</p>
-                </div>
-              ))}
-            </div>
+            {service.blocks.length > 0 && (
+              <div className="section__content">
+                {service.blocks.map((block) => (
+                  <div key={block.id}>
+                    <h4>{block.title}</h4>
+                    <div>
+                      <p>{block.body}</p>
+                      {block.images.length > 0 && (
+                        <a href={`#${block.title}`}>Перейти к фото</a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
           <div className="header__footer"> </div>
         </div>
         <Separator size="small" border="bottom" />
         <Separator />
       </section>
+      {service.blocks.length > 0 && (
+        <div className="category">
+          <div className="section category__year">
+            <div className="section__body">
+              {service.blocks.map(
+                (block) =>
+                  block.images.length > 0 && (
+                    <>
+                      <div id={block.title} className="category-title">
+                        <strong>{block.title}</strong>
+                      </div>
+                      <ul className="category__list" key={block.id}>
+                        <Image.PreviewGroup>
+                          {block.images.map((img) => (
+                            <li className="category__list-point" key={img.id}>
+                              <div className="category__item">
+                                <Image
+                                  src={img.image}
+                                  alt={img.caption || block.title}
+                                  loading="lazy"
+                                  draggable="false"
+                                  className="category__item-image"
+                                />
+                              </div>
+                            </li>
+                          ))}
+                        </Image.PreviewGroup>
+                      </ul>
+                    </>
+                  )
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
-      {service.slug === 'design' && designImages.length > 0 && (
+      {/* {service.slug === 'design' && designImages.length > 0 && (
         <div className="category">
           <section className="section category__year">
             <div className="section__body">
@@ -147,7 +215,7 @@ export function ServicePage() {
             </div>
           </section>
         </div>
-      )}
+      )} */}
     </>
   )
 }

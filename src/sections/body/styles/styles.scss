@@ -139,11 +139,32 @@
     p {
       margin-bottom: 1.6rem;
       margin-top: 0;
+
+      &:has(+ a) {
+        margin-bottom: 0rem;
+      }
+    }
+
+    a {
+      color: var(--color-primary);
+      text-align: end;
+      margin-bottom: 1.6rem;
+      display: block;
     }
 
     @media (min-width: 768px) {
       ul {
         list-style-type: disc;
+      }
+    }
+
+    @media (max-width: 767px) {
+      ul li {
+        text-align: left;
+      }
+
+      .more-text ul li {
+        text-align: center !important;
       }
     }
   }

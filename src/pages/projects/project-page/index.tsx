@@ -6,7 +6,7 @@ import { fetchProject, fetchProjects } from '../../../core/api/projects'
 import type { ProjectDto } from '../../../core/api/projectTypes'
 import { Separator } from '../../../components/separ'
 import { Image } from 'antd'
-import { ProjectDetailSkeleton } from '../../../components/project-skeleton'
+import { ProjectDetailSkeleton } from '../../../components/skeleton'
 
 export function ProjectPage() {
   const { projectSlug } = useParams<{ projectSlug: string }>()
@@ -180,7 +180,7 @@ export function ProjectPage() {
                   {project.images.map((img, index) => {
                     const src = img.image
                     return (
-                      <li className="project-gallery__list-point">
+                      <li className="project-gallery__list-point" key={img.id}>
                         <div className="project-gallery__item">
                           <Image
                             loading="lazy"
