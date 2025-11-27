@@ -65,6 +65,7 @@
 }
 
 .grayscale {
+  display: inline-block;
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
   transition: 0.25s;

@@ -179,6 +179,11 @@ export function ServicePage() {
                                   draggable="false"
                                   className="category__item-image"
                                 />
+                                {img.caption && (
+                                  <div className="category__item-title">
+                                    {img.caption}
+                                  </div>
+                                )}
                               </div>
                             </li>
                           ))}

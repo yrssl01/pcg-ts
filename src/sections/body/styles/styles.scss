@@ -141,7 +141,7 @@
       margin-top: 0;
 
       &:has(+ a) {
-        margin-bottom: 0rem;
+        margin-bottom: 0.4rem;
       }
     }
 
@@ -150,6 +150,10 @@
       text-align: end;
       margin-bottom: 1.6rem;
       display: block;
+
+      @media (max-width: 767px) {
+        text-align: center;
+      }
     }
 
     @media (min-width: 768px) {
