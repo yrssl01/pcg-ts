@@ -41,10 +41,8 @@ export function useAutoObserveScrollTitles({
         })
     }
 
-    // первичный прогон
     scan()
 
-    // следим за появлением новых узлов (после роутинга/рендеров)
     const mo = new MutationObserver((mutations) => {
       mutations.forEach((m) => {
         m.addedNodes.forEach((node) => {

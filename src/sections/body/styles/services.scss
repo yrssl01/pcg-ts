@@ -7,7 +7,7 @@
 
   &__point {
     margin: 1rem;
-    flex: 0 0 calc(50% - 2rem); // на мобилке: 2 в ряд
+    flex: 0 0 calc(50% - 2rem);
     max-width: calc(50% - 2rem);
     min-width: 0;
   }
@@ -21,7 +21,7 @@
       position: absolute;
       inset: 0;
       margin: auto;
-      max-width: 72px; // одинаковый размер иконок
+      max-width: 72px;
       max-height: 72px;
     }
   }
@@ -33,7 +33,6 @@
   }
 }
 
-/* только первая услуга – на всю ширину */
 @media screen and (max-width: 574px) {
   #services > .services__wrapper > .services__point:first-child {
     flex: 0 0 100%;
@@ -51,12 +50,11 @@
   }
 
   .services__block-image img {
-    max-width: 64px; // чуть меньше иконка на маленьких экранах
+    max-width: 64px;
     max-height: 64px;
   }
 }
 
-/* ≥575px – 3 колонки */
 @media screen and (min-width: 575px) {
   .services__point {
     flex: 0 0 calc(33.333% - 2rem);

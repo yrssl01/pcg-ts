@@ -38,7 +38,6 @@
         color: var(--color-gray-300);
       }
       &.active {
-        pointer-events: none;
         color: var(--color-primary);
       }
     }

@@ -13,11 +13,9 @@ import ScrollToTop from './core/utils/scrollToTop'
 import { PageNotFound } from './pages/404'
 import { NotFoundLayout } from './layouts/404'
 import { ProjectPage } from './pages/projects/project-page'
-import { useState } from 'react'
 import { Navigation } from './components/navigation'
 
 function App() {
-  // const [bottomHeight, setBottomHeight] = useState<number>(0)
   useAutoObserveScrollTitles()
 
   return (

@@ -1,4 +1,4 @@
-import { useEffect, useState, type Dispatch, type SetStateAction } from 'react'
+import { useEffect, useState } from 'react'
 import './styles.scss'
 import { Link, useLocation } from 'react-router-dom'
 import clsx from 'clsx'

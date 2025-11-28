@@ -1,40 +1,11 @@
-// ServicesSection.tsx
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/services.scss'
 import { fetchServices } from '../../core/api/services'
 import type { ServiceListDto } from '../../core/api/serviceTypes'
-// import service1 from '../../assets/images/service-icons/map.png'
-// import service2 from '../../assets/images/service-icons/project-management.png'
-// import service3 from '../../assets/images/service-icons/design.png'
-// import service4 from '../../assets/images/service-icons/research.png'
-// import service5 from '../../assets/images/service-icons/supervision.png'
-// import service6 from '../../assets/images/service-icons/construction-site.png'
-// import service7 from '../../assets/images/service-icons/expert.png'
-// import service8 from '../../assets/images/service-icons/delivery.png'
-// import service9 from '../../assets/images/service-icons/maintenance.png'
 import referenceList from '../../assets/documents/reference-list.pdf'
 
 import { Separator } from '../../components/separ'
-
-// const servicesWithPages = [
-//   { icon: service1, title: 'Девелоперские услуги', slug: 'development' },
-//   { icon: service2, title: 'Управление проектом', slug: 'project-management' },
-//   { icon: service3, title: 'Разработка проекта', slug: 'design' },
-//   { icon: service4, title: 'Экспертные работы', slug: 'research' },
-//   { icon: service5, title: 'Надзорные услуги', slug: 'supervision' },
-//   {
-//     icon: service6,
-//     title: 'Строительно-монтажные работы (СМР)',
-//     slug: 'construction',
-//   }, // 6
-// ]
-
-// const servicesWithoutPages = [
-//   { icon: service7, title: 'Аттестованные эксперты' },
-//   { icon: service8, title: 'Экспертный выезд' },
-//   { icon: service9, title: 'Полное оснащение' },
-// ]
 
 export function ServicesSection() {
   const [services, setServices] = useState<ServiceListDto[]>([])
@@ -101,7 +72,7 @@ export function ServicesSection() {
                         <div className="services__block-image">
                           <img
                             src={service.icon}
-                            alt=""
+                            alt={service.title}
                             loading="lazy"
                             draggable={false}
                           />

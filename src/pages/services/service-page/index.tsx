@@ -196,31 +196,6 @@ export function ServicePage() {
           </div>
         </div>
       )}
-
-      {/* {service.slug === 'design' && designImages.length > 0 && (
-        <div className="category">
-          <section className="section category__year">
-            <div className="section__body">
-              <ul className="category__list">
-                <Image.PreviewGroup>
-                  {designImages.map((src, index) => (
-                    <li className="category__list-point">
-                      <div className="category__item">
-                        <Image
-                          src={src}
-                          loading="lazy"
-                          draggable="false"
-                          className="category__item-image"
-                        />
-                      </div>
-                    </li>
-                  ))}
-                </Image.PreviewGroup>
-              </ul>
-            </div>
-          </section>
-        </div>
-      )} */}
     </>
   )
 }

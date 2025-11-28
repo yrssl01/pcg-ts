@@ -11,10 +11,8 @@
     list-style-type: none;
 
     & > li {
-      //   text-indent: -5px;
       &::before {
         content: '- ';
-        // text-indent: -5px;
       }
     }
 

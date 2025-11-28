@@ -2,7 +2,7 @@ export type ServiceListDto = {
   id: number
   slug: string
   title: string
-  icon: string | null
+  icon: string
   has_detail_page: boolean
 }
 
