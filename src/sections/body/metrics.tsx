@@ -5,7 +5,7 @@ import './styles/metrics.scss'
 export function Metrics() {
   return (
     <>
-      <section className="section">
+      <section className="section" id="metrics">
         <Separator />
         <div className="section__body">
           <div className="section__body-col">

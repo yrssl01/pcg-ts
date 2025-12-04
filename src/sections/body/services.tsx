@@ -30,11 +30,11 @@ export function ServicesSection() {
     setShowServices(!showServices)
   }
 
-  const mainServices = services.slice(0, 3)
-  const moreServices = services.slice(3)
+  const mainServices = services.slice(0, 6)
+  const moreServices = services.slice(6)
 
   return (
-    <section className="section">
+    <section className="section" id="services">
       <Separator size="small" border="top" />
       <div className="section__body">
         <div className="section__body-col">

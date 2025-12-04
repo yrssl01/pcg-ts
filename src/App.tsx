@@ -14,6 +14,12 @@ import { PageNotFound } from './pages/404'
 import { NotFoundLayout } from './layouts/404'
 import { ProjectPage } from './pages/projects/project-page'
 import { Navigation } from './components/navigation'
+import Menu from './components/menu'
+import { AboutPage } from './pages/about'
+import { MetricsPage } from './pages/metrics'
+import { LicensesPage } from './pages/licenses'
+import { PartnersPage } from './pages/partners'
+import { ContactsPage } from './pages/contacts'
 
 function App() {
   useAutoObserveScrollTitles()
@@ -28,10 +34,15 @@ function App() {
               <Route path="/" element={<HomePage />} />
             </Route>
             <Route element={<InnerLayout />}>
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/metrics" element={<MetricsPage />} />
               <Route path="/services/" element={<Services />} />
               <Route path="/services/:serviceSlug" element={<ServicePage />} />
               <Route path="/projects/" element={<Projects />} />
               <Route path="/projects/:projectSlug" element={<ProjectPage />} />
+              <Route path="/partners" element={<PartnersPage />} />
+              <Route path="/licenses" element={<LicensesPage />} />
+              <Route path="/contacts" element={<ContactsPage />} />
             </Route>
           </Route>
           <Route element={<NotFoundLayout />}>

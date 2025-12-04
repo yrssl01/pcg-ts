@@ -10,7 +10,7 @@ export function About() {
 
   return (
     <>
-      <section className="section">
+      <section className="section" id="about">
         <Separator />
         <div className="section__body">
           <div className="section__body-col">

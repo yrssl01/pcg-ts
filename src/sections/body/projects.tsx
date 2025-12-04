@@ -27,7 +27,7 @@ export function ProjectsSection() {
   if (loading) {
     return (
       <>
-        <section className="section section--dark">
+        <section className="section section--dark" id="projects">
           <div className="relative">
             {[1, 2].map((i) => (
               <ProjectCardSkeleton key={i} />
@@ -41,7 +41,7 @@ export function ProjectsSection() {
   if (error) {
     return (
       <>
-        <section className="section section--dark">
+        <section className="section section--dark" id="projects">
           <div className="relative">
             <div className="project__item">
               <Separator />
@@ -68,7 +68,7 @@ export function ProjectsSection() {
 
   return (
     <>
-      <section className="section section--dark">
+      <section className="section section--dark" id="projects">
         <div className="relative">
           {projects.map((project) => {
             const preview = project.images[0]?.image

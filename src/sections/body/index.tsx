@@ -4,7 +4,7 @@ import { Metrics } from './metrics'
 import { ProjectsSection } from './projects'
 import { ServicesSection } from './services'
 import { Partners } from './partners'
-import { Licenses } from './licences'
+import { Licenses } from './licenses'
 
 export function SectionBody() {
   return (

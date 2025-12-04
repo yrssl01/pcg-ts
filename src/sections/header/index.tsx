@@ -1,6 +1,6 @@
 import { Logo } from '../../components/logo'
 import './styles.scss'
-import bgVideo from '../../assets/video/background-video.mp4'
+import bgVideo from '../../assets/video/1.mp4'
 import { Separator } from '../../components/separ'
 // import { Header } from './header'
 

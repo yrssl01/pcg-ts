@@ -20,7 +20,7 @@ const logos = Object.entries(modules)
 export function Partners() {
   return (
     <>
-      <section className="section ">
+      <section className="section" id="clients">
         <Separator size="small" />
         <div className="section__body">
           <div className="section__body-col">

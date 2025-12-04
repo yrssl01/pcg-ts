@@ -8,7 +8,6 @@ export function NotFoundLayout() {
   return (
     <>
       <GridLines />
-
       <main className="template-error">
         <section className="header section">
           <Header />

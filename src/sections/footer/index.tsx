@@ -46,7 +46,7 @@ export function Footer() {
                     target="_blank"
                     className="icon icon_whatsapp"
                   ></a>
-                  <a href="mailto:std.project@mail.ru">std.project@mail.ru</a>
+                  <a href="mailto:std-project@mail.ru">std-project@mail.ru</a>
                 </div>
               </div>
             </div>
